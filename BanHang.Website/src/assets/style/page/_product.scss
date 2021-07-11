@@ -1,0 +1,15 @@
+.productCard{
+    & .productCard__img{
+        width: 245px;
+        height: 240px;
+    }
+}
+
+
+// Product Rate CSS {
+.product-rate {
+
+    &__header {
+        border-bottom: 1px solid $color-white-3;
+    }
+}

@@ -1,0 +1,290 @@
+@import "src/assets/style/base/variable";
+
+.custom-button {
+  text-align: center;
+  display: inline-block;
+  width: 120px;
+  padding: 10px 4px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    border: 1px solid $color-primary;
+  }
+}
+.custom-button-2 {
+  display: block;
+  width: 150px;
+  color: $color-primary;
+  padding: 10px 2px;
+  border: 1px solid $color-primary;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  &:hover {
+    background-color: $color-primary;
+    color: #fff;
+    border: 1px solid $color-primary;
+  }
+}
+.btn-add-cart {
+  width: 150px;
+  color: $color-primary;
+  padding: 5px 16px;
+  border: 1px solid $color-primary;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $color-primary;
+    color: #fff;
+    border: 1px solid $color-primary;
+  }
+}
+.btn-buy-cart {
+  width: 150px;
+  color: $color-white;
+  padding: 5px 16px;
+  border: 1px solid $color-white-2;
+  border-radius: 5px;
+  background-color: $color-primary;
+
+  &:hover {
+    background-color: $color-primary;
+    color: #fff;
+    border: 1px solid $color-primary;
+  }
+}
+.btn-add-cart-rounded {
+  width: 250px;
+  color: $color-primary;
+  padding: 5px 16px;
+  border: 1px solid $color-primary;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $color-primary;
+    color: #fff;
+    border: 1px solid $color-primary;
+  }
+}
+
+.btn--black {
+  width: 150px;
+  color: $color-white;
+  padding: 10px 16px;
+  border: none;
+  background-color: $color-black;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
+.btn--black2 {
+  display: block;
+  width: 250px;
+  color: $color-white;
+  padding: 10px 16px;
+  border: none;
+  background-color: $color-black;
+  border-radius: 30px;
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
+.btn--update-cart {
+  display: block;
+  width: 270px;
+  color: $color-white;
+  padding: 10px 16px;
+  border: none;
+  background-color: $color-primary;
+  border-radius: 30px;
+  &:hover {
+    background-color: $color-black;
+    color: $color-white;
+  }
+}
+.btn--green {
+  display: block;
+  width: 250px;
+  color: $color-white;
+  padding: 10px;
+  border: none;
+  background-color: #89c74a;
+  border-radius: 25px;
+
+  &:hover {
+    background-color: $color-black;
+    color: $color-white;
+  }
+}
+.btn--social {
+  align-items: center;
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  display: block;
+  color: $color-gray-1;
+  background-color: $color-white-3;
+  border-radius: 50%;
+  transition: 0.3s ease-in;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+}
+.btn--pagenumber {
+  width: 20px;
+  color: $color-primary;
+  padding: 5px 16px;
+  border: 1px solid $color-primary;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $color-primary;
+    color: #fff;
+    border: 1px solid $color-primary;
+  }
+  & .active {
+    background-color: $color-primary;
+    color: #fff;
+    border: 1px solid $color-primary;
+  }
+}
+
+.btn--pagenumberactive {
+  width: 20px;
+  color: $color-primary;
+  padding: 5px 16px;
+  border: 1px solid $color-deep-blue;
+  border-radius: 5px;
+  background-color: $color-deep-blue;
+  color: #fff;
+}
+.btn-register {
+  width: 150px;
+  color: white;
+  padding: 5px 16px;
+  border: 1px solid $color-primary;
+  border-radius: 20px;
+  background-color: $color-primary;
+
+  &:hover {
+    background-color: $color-primary;
+    color: #fff;
+    border: 1px solid $color-primary;
+  }
+}
+
+.btn-link {
+  display: block;
+  width: 120px;
+  color: $color-white;
+  padding: 5px 16px;
+  border: 1px solid $color-white-2;
+  border-radius: 5px;
+  background-color: $color-primary;
+
+  &:hover {
+    background-color: $color-primary;
+    color: #fff;
+    border: 1px solid $color-primary;
+  }
+}
+.continue-shopping{
+  color: $color-primary;
+}
+// .btn-add-cart{
+//   display: block;
+//   width: 120px;
+//   color: $color-white;
+//   padding: 5px 16px;
+//   border: 1px solid $color-white-2;
+//   border-radius: 5px;
+//   background-color: $color-primary;
+
+//   &:hover {
+//     background-color: $color-primary;
+//     color: #fff;
+//     border: 1px solid $color-primary;
+//   }
+// }
+
+// Btn continued Shopping
+.btn-continued-shopping {
+  padding: 15px 10px;
+  text-transform: uppercase;
+  width: 240px;
+  height: auto;
+  background-color: $color-primary;
+  border-radius: 20px;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-black-2;
+    color: $color-white;
+
+  }
+}
+
+
+// ActiveStatusBtn CSS
+//.btn-active-status  {
+//  width: 20px;
+//  height: 20px;
+//  border: 1px solid black;
+//}.btn-active-status  {
+//  width: 20px;
+//  height: 20px;
+//  border: 1px solid black;
+//}
+
+// ShowMore_btn
+.showMore_btn {
+  width: 120px;
+  padding: 5px 0;
+  background-color: $color-primary;
+  color: $color-white;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: $color-black-1;
+  }
+}
+// Btn Add new product
+.__product--icon-to-product{
+  width: 40px;
+  height: 40px;
+  color: #117a8b;
+  // size: 40px;
+}
+// .__products--button-add{
+//   border: none;
+// }
+
+//Product Search Admin
+.bssearch{
+  width: 20px;
+  height: 20px;
+  // color: #117a8b;
+  // background-color: none;
+  border: none;
+
+}
+.icon-search{
+  top:50px;
+  // position: absolute;
+  // bottom: 0;
+}
