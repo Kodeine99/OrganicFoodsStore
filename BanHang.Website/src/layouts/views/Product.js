@@ -21,7 +21,7 @@ export default function Product() {
       await onLoadData(valuesFilter);
     };
     onLoad(valuesFilter);
-  }, [pageIndex, valuesFilter ]);
+  }, [pageIndex, valuesFilter]);
 
   const onLoadData = async (valuesFilter) => {
     console.log("valuesFilter", valuesFilter);
@@ -47,9 +47,8 @@ export default function Product() {
           <ProductRate />
         </div>
       </div>
-      
-      <div className="product__right col-9">
-      
+
+      <div className="product__right">
         <div className="product_result d-flex justify-content-end mb-3">
           <h6>
             Showing {pageSize * (pageIndex - 1) + 1}-{pageSize * pageIndex} of{" "}
@@ -59,7 +58,7 @@ export default function Product() {
         <div className="product__conntent">
           <Row lg={3} md={3} xs={2}>
             {products.map((product, index) => (
-              <Col className="mb-3">
+              <Col xs={12} sm={12} md={6} lg={4} className="mb-3">
                 <ProductCard
                   key={index}
                   productName={product.name}
@@ -73,19 +72,13 @@ export default function Product() {
             ))}
           </Row>
         </div>
-       <div className="product__page-pagination d-flex justify-content-center">
+        <div className="product__page-pagination d-flex justify-content-center">
           <CustomPagination
             pagination={pagination}
             page={pageIndex}
             setPage={(page) => setPageIndex(page)}
           />
         </div>
-																   
-			  
-																				   
-											 
-			   
-			  
       </div>
     </div>
   );

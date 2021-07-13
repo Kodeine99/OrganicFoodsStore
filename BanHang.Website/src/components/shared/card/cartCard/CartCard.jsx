@@ -44,10 +44,6 @@ const CartCard = ({
     };
 
     onLoad(value);
-													  
-	  
-															
-							
   };
   const subTotal = unitPrice * quantity;
   // setSubtotal(unitPrice * quantity);
@@ -66,16 +62,12 @@ const CartCard = ({
     onLoad();
   };
 
-										   
-							 
-	
   useEffect(() => {
     const loadTotal = async () => {
-					 
       await dispatch(updateCart({ ProductId: productId, Quantity: quantity }));
-		
+
       setLoading(loadingIndex + 1);
-												 
+
       const acctionCart = await dispatch(
         getAllCartByUerId({ PageIndex: 1, PageSize: 9 })
       );
@@ -103,7 +95,7 @@ const CartCard = ({
           currency: "VND",
         })}
       </td>
-      <td className="col-1 text-center align-middle">
+      <td className="col-2 text-center align-middle">
         <button
           className="font-weight-bold"
           onClick={() => changeQuantity(quantity - 1)}
@@ -125,12 +117,13 @@ const CartCard = ({
           +
         </button>
       </td>
-<td className="col-2 text-center align-middle">
+      <td className="col-2 text-center align-middle">
         {subTotal.toLocaleString("it-IT", {
           style: "currency",
           currency: "VND",
         })}
-      </td>      <td className="col-1 text-center align-middle">
+      </td>{" "}
+      <td className="col-1 text-center align-middle">
         <div className="cart__delete">
           <FaTimes onClick={() => onClickDelete()} />
         </div>

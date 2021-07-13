@@ -17,16 +17,6 @@ import CartEmpty from "./CartEmpty";
 const Cart = () => {
   const carts = useSelector((state) => state.cart.cartResult);
   const [dataTable, setDataTable] = useState(carts);
-
-											
-								   
-										
-	
-				  
-										 
-								   
-											 
-	
   const totals = dataTable.reduce(
     (currentTotal, cartB) => currentTotal + cartB.unitPrice * cartB.quantity,
     0
@@ -43,7 +33,7 @@ const Cart = () => {
     };
     getTotal();
   }, [loading, dataTable]);
- 
+
   const subtotal = [];
   const dispatch = useDispatch();
   const onClearCart = async () => {
@@ -54,17 +44,11 @@ const Cart = () => {
     );
     const actionCart = await unwrapResult(itemCart);
     setDataTable(actionCart.result.items);
-												 
   };
 
-								   
-	
-									 
-   
   const table = () => {
-    return(
+    return (
       <>
-							
         {carts.map((cart, index) => (
           <CartCard
             key={index}
@@ -75,22 +59,17 @@ const Cart = () => {
             qty={cart.quantity}
             productId={cart.productId}
             availableQuantity={cart.availableQuantity}
-
             setCart={(cart) => setDataTable(cart)}
             setLoading={(loadingIndex) => setLoading(loadingIndex)}
-															   
-							 
-													 
           />
         ))}
       </>
-    )
-  }
-				   
-																		  
-			 
-  return (
-    carts.length > 0 ?
+    );
+  };
+  // Cart mobile items
+  const cartList = () => {};
+
+  return carts.length > 0 ? (
     <div className="container">
       <div className=" cart text-center">
         <h3 className={"m-b-20 font-weight-bold"}>Your Cart Items</h3>
@@ -101,18 +80,15 @@ const Cart = () => {
               <th className="col-2 text-center">IMAGE</th>
               <th className="col-4 text-center">PRODUCT NAME</th>
               <th className="col-2 text-center">UNIT PRICE</th>
-              <th className="col-1 text-center">QTY</th>
+              <th className="col-2 text-center">QTY</th>
               <th className="col-1 text-center">SUBTOTAL</th>
               <th className="col-2 text-center">ACTION </th>
             </tr>
           </thead>
-          <tbody>
-            {table()}
-										  
-          </tbody>
+          <tbody>{table()}</tbody>
         </Table>
-											
-        <div className=" d-flex justify-content-between mb-4 mt-4">
+
+        <div className="cart__actions d-flex justify-content-between mb-4 mt-4">
           <div className="btn-left">
             <BtnShoppingGreen title="CONTINUE SHOPPING" className="d-block" />
           </div>
@@ -129,74 +105,8 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      <div class="updateinfo d-flex justify-content-end mb-4 m-t-50">
-										
-											
-																			   
-									   
-				 
-							   
-																
-				   
-				
-									 
-													 
-																  
-					 
-								 
-									 
-																			 
-				
-				  
-											  
-																  
-					 
-								
-									
-																		  
-				
-				  
-										   
-																			 
-					
-						   
-									
-								  
-													   
-				
-				  
-																	
-															
-						   
-					   
-				  
-				
-			  
-
-									  
-									  
-																			  
-							 
-				 
-																
-				
-											  
-																		  
-				  
-						 
-								  
-								
-													 
-			  
-				
-																  
-														   
-						  
-					 
-				
-			  
-		   
-        <div className="info-right col-4">
+      <div class="col-xs-12 updateinfo d-flex justify-content-end mb-4 m-t-50">
+        <div className="info-right col-xs-12 col-sm12 col-md-6 col-lg-4">
           <div className="info-title">
             <h5 className="font-weight-bold border-bottom p-3 text-uppercase">
               CART TOTAL
@@ -232,8 +142,8 @@ const Cart = () => {
         </div>
       </div>
     </div>
-      :
-      <CartEmpty/>
+  ) : (
+    <CartEmpty />
   );
 };
 export default Cart;

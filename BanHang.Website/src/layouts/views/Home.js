@@ -2,31 +2,33 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import HomeCarousel from "../../components/home/Carousel/Carousel";
 import BannerBox from "../../components/home/BannerBox/BannerBox";
-import {BtnBlack} from "../../components/shared/button/CustomBtn2";
+import { BtnBlack } from "../../components/shared/button/CustomBtn2";
 import ProductCard from "../../components/shared/card/ProductCard/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
-import {getBestSellingProduct} from "../../app/productSlice";
+import { getBestSellingProduct } from "../../app/productSlice";
 
 export default function Home(props) {
   const [categories, setCategories] = useState([]);
   const [bestSelling, setBestSelling] = useState([]);
   const dispatch = useDispatch();
-  const categoryResult=useSelector(state => state.category.categoryResult);
-  useEffect(()=>{
-    setCategories(categoryResult)
+  const categoryResult = useSelector((state) => state.category.categoryResult);
+  useEffect(() => {
+    setCategories(categoryResult);
     const loadData = async () => {
       await loadBestSeller();
-    }
+    };
     loadData();
     // eslint-disable-next-line
-  },[])
+  }, []);
 
   const loadBestSeller = async () => {
-    const actionResult = await dispatch(getBestSellingProduct({PageSize: 4, PageIndex: 1}));
+    const actionResult = await dispatch(
+      getBestSellingProduct({ PageSize: 4, PageIndex: 1 })
+    );
     const bestSellerProducts = await unwrapResult(actionResult).result.items;
     await setBestSelling(bestSellerProducts);
-  }
+  };
 
   const suppliers = [
     {
@@ -129,17 +131,18 @@ export default function Home(props) {
             </Col>
           </Row>
           <Row lg={4} md={3} xs={2}>
-            {bestSelling && bestSelling.map((product,index) => (
-              <Col key={index}>
-                <ProductCard
-                  productName={product.name}
-                  rate={product.averageRate}
-                  price={product.unitPrice}
-                  imgUrl={`img/product/product/${product?.pictures[0]?.fileName}`}
-                  productId={product.id}
-                />
-              </Col>
-            ))}
+            {bestSelling &&
+              bestSelling.map((product, index) => (
+                <Col xs={12} sm={12} md={6} lg={3} key={index}>
+                  <ProductCard
+                    productName={product.name}
+                    rate={product.averageRate}
+                    price={product.unitPrice}
+                    imgUrl={`img/product/product/${product?.pictures[0]?.fileName}`}
+                    productId={product.id}
+                  />
+                </Col>
+              ))}
           </Row>
         </Container>
       </div>
@@ -189,7 +192,7 @@ export default function Home(props) {
                   <h2>Subscribe To Our Newsletter</h2>
                 </div>
               </Col>
-              <Col xs={{ span: 6, offset: 3 }}>
+              <Col xs={{ span: 10, offset: 1 }}>
                 <form method="post" action="#" className="subscribe__form">
                   <div className="subscribe__form-content">
                     {/*<label htmlFor="newsletter-mail" className="position-absolute">*/}
@@ -219,7 +222,7 @@ export default function Home(props) {
         <Container>
           <Row>
             {suppliers.map((supplier, index) => (
-              <Col key={index} xs={6} md={3} lg={2}>
+              <Col key={index} xs={6} md={4} lg={2}>
                 <img src={process.env.PUBLIC_URL + supplier.img} alt="" />
               </Col>
             ))}

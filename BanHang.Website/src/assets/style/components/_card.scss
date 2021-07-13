@@ -57,13 +57,13 @@
   display: block;
   border: 1px solid $color-white-3;
 
-  & .productCard__img {
+  &__img {
     overflow: hidden;
 
-    img {
+    & img {
       display: block;
       height: auto;
-      max-width: 100%;
+      width: 100%;
     }
   }
 
@@ -73,7 +73,7 @@
     }
   }
 
-  & .productCard__info {
+  &__info {
     padding-bottom: 10px;
     text-align: center;
     justify-content: center;
@@ -91,7 +91,7 @@
     }
   }
 
-  & .productCard__action {
+  &__action {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -143,7 +143,6 @@
         transition: linear;
       }
     }
-
   }
 
   & .productCard__action {
@@ -167,17 +166,13 @@
 
 // Product Cart Big CSS
 .product-details__card {
-
   &-img {
-
   }
 
   &-content {
-
   }
 
   &-name {
-
   }
 
   &-rate {
@@ -203,7 +198,6 @@
         margin-bottom: 4px;
       }
     }
-
   }
 }
 // Comment Card CSS
@@ -227,7 +221,6 @@
   }
 }
 .c-content__user-name {
-
   & h5 {
     margin-bottom: 0 !important;
   }
@@ -274,7 +267,6 @@
   background-color: #f3f3f3;
 
   &__body {
-
     &-list {
       & li {
         padding-bottom: 16px;
@@ -288,10 +280,10 @@
       border: 1px solid $color-white;
       padding: 10px;
       background-color: white;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
-        box-shadow: 0 0 11px rgba(33,33,33,.2);
+        box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
       }
 
       &--info {
@@ -422,7 +414,7 @@
   }
 }
 
-		//Product Add Cart
+//Product Add Cart
 .target {
   z-index: 1;
 }
@@ -444,9 +436,33 @@
   right: -5px;
   z-index: 20;
 }
-.product-add-to-card{
-  &img{
+.product-add-to-card {
+  &img {
     border-radius: 8px;
-
   }
-}		  
+}
+
+// responsive
+@media screen and(max-width: 576px) {
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .productCard {
+    &__img {
+      height: 350px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .productCard {
+    margin-bottom: 20px;
+  }
+}
+@media screen and(min-width: 960px) {
+}
+@media screen and(min-width: 960px) {
+  .productCard {
+    &__img {
+      height: 250px;
+    }
+  }
+}

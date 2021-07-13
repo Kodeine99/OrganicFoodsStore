@@ -1,5 +1,5 @@
 import React from "react";
-import { FiX, FiSearch, FiShoppingCart } from "react-icons/fi";
+import { FiX, FiSearch, FiShoppingCart, FiLogOut } from "react-icons/fi";
 import {
   FaRegUser,
   FaFacebookF,
@@ -8,11 +8,20 @@ import {
   FaGooglePlusG,
   FaInstagram,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useCookies } from "react-cookie";
+import { userSelector } from "../../../app/userSlice";
 
 export default function MobileMenu({ show, setShow }) {
+  const history = useHistory();
+  const { userInfo } = useSelector(userSelector);
+  const [cookies, setCookies, removeCookie] = useCookies();
   const carts = useSelector((state) => state.cart.cartResult);
+  const logOut = () => {
+    removeCookie("access_token");
+    history.push("/");
+  };
   return (
     <>
       <div
@@ -46,21 +55,36 @@ export default function MobileMenu({ show, setShow }) {
             </div>
           </form>
           {/* Mobile menu action icons */}
-          <ul className="header__user-action-icon m-tb-15 text-center">
-            <li>
-              <Link to="/userProfile">
-                <FaRegUser />
-              </Link>
-            </li>
-            <li>
-              <Link to="/cart">
-                <FiShoppingCart />
-                <span className="item-count pos-absolute">
-                  {carts && carts.length}
-                </span>
-              </Link>
-            </li>
-          </ul>
+          {cookies["access_token"] ? (
+            <ul className="header__user-action-icon m-tb-15 text-center">
+              <p className="hello-title">
+                Hello, <span>{userInfo && userInfo.userName}</span>
+              </p>
+              <li>
+                <Link to="/userProfile" onClick={() => setShow(false)}>
+                  <FaRegUser />
+                </Link>
+              </li>
+              <li>
+                <Link to="/cart" onClick={() => setShow(false)}>
+                  <FiShoppingCart />
+                  <span className="item-count pos-absolute">
+                    {carts && carts.length}
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link to="/cart" onClick={logOut}>
+                  <FiLogOut />
+                </Link>
+              </li>
+            </ul>
+          ) : (
+            <div className={"header__action--nonLogin"}>
+              <Link to={"/login"}>Login</Link>
+              <Link to={"/register"}>Register</Link>
+            </div>
+          )}
           {/* Mobile menu nav link */}
           <div className="mobile-menu-nav-link">
             <ul>
@@ -68,13 +92,19 @@ export default function MobileMenu({ show, setShow }) {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/product">Products</Link>
+                <Link to="/product" onClick={() => setShow(false)}>
+                  Products{" "}
+                </Link>
               </li>
               <li>
-                <Link to="/about-us">About us</Link>
+                <Link to="/about-us" onClick={() => setShow(false)}>
+                  About us
+                </Link>
               </li>
               <li>
-                <Link to="/contact-us">Contact us</Link>
+                <Link to="/contact-us" onClick={() => setShow(false)}>
+                  Contact us
+                </Link>
               </li>
             </ul>
           </div>

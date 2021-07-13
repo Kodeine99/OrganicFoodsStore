@@ -6,7 +6,6 @@ import Logo from "../../../assets/img/logo/oganuceic.png";
 import { useCookies } from "react-cookie";
 import { useDispatch, useSelector } from "react-redux";
 import { userSelector } from "../../../app/userSlice";
-import locale from "yup/lib/locale";
 import { getAllCartByUerId } from "../../../app/cartSlice";
 
 function HeaderCenter({ setShow, isShow }) {
@@ -151,6 +150,12 @@ function HeaderCenter({ setShow, isShow }) {
                 <div className={"header__action--nonLogin"}>
                   <Link to={"/login"}>Login</Link>
                   <Link to={"/register"}>Register</Link>
+                  <button
+                    className="item-hamburger-btn"
+                    onClick={() => setShow(!isShow)}
+                  >
+                    <FiMenu />
+                  </button>
                 </div>
               )}
             </div>

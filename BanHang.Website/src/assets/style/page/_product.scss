@@ -1,15 +1,37 @@
-.productCard{
-    & .productCard__img{
-        width: 245px;
-        height: 240px;
-    }
-}
-
+// .productCard{
+//     & .productCard__img{
+//         width: 245px;
+//         height: 240px;
+//     }
+// }
 
 // Product Rate CSS {
 .product-rate {
+  &__header {
+    border-bottom: 1px solid $color-white-3;
+  }
+}
 
-    &__header {
-        border-bottom: 1px solid $color-white-3;
+// Responsive CSS
+@media screen and (max-width: 576px) {
+  .product {
+    &__left {
+      display: none;
+      & .product__side-bar {
+        display: none;
+      }
+      & .product__rate {
+        display: none;
+      }
     }
+  }
+}
+@media screen and (max-width: 768px) {
+  .product {
+    &__left {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 960px) {
 }

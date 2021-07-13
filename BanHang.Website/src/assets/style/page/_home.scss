@@ -43,7 +43,6 @@
 
 // Top Categories section CSS
 .topCategories {
-
   & .topCategories__header {
     align-items: center;
     margin-bottom: 35px;
@@ -60,7 +59,6 @@
 
 // Best Seller section CSS
 .bestSeller {
-
   & .bestSeller__header {
     align-items: center;
     margin-bottom: 35px;
@@ -73,6 +71,7 @@
 .discountBanner {
   & .discountBanner__bg {
     img {
+      height: 280px;
       width: 100%;
       display: block;
       object-fit: cover;
@@ -103,13 +102,13 @@
 // Subscribe section CSS
 .subscribe {
   img {
+    object-position: center;
+    object-fit: cover;
     width: 100%;
-    height: auto;
+    height: 240px;
   }
 
   & .subscribe__content {
-
-
     & .subscribe__title {
       margin-bottom: 60px;
       font-size: 40px;
@@ -170,7 +169,6 @@
 
 // Supplier section CSS
 .supplier {
-  
   & .container {
     padding-bottom: 20px;
     border-bottom: 1px solid $color-white-3;
@@ -186,4 +184,66 @@
       transform: scale(1.2);
     }
   }
+}
+
+// Responsive
+@media screen and(max-width: 576px) {
+  .home-body {
+    & .banner__box {
+      margin-bottom: 20px;
+
+      & .banner__btn {
+        width: 100px;
+        left: calc(50% - 60px);
+        top: 70%;
+        & .custom-button {
+          padding: 5px;
+        }
+      }
+    }
+    & .banner__content {
+      padding-left: 10px;
+
+      & .banner__title {
+        font-size: 20px;
+      }
+    }
+
+    & .discountBanner {
+      & .discountBanner__box {
+        & .banner__content {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+@media screen and(max-width: 768px) {
+  .home-body {
+    & .banner__box {
+      margin-bottom: 20px;
+
+      & .banner__btn {
+        width: 100px;
+        left: calc(50% - 60px);
+        top: 70%;
+        & .custom-button {
+          padding: 5px;
+        }
+      }
+    }
+    & .banner__content {
+      padding-left: 10px;
+
+      & .banner__title {
+        font-size: 20px;
+      }
+    }
+
+    & .bestSeller {
+      margin-top: 50px;
+    }
+  }
+}
+@media screen and(max-width: 960px) {
 }
