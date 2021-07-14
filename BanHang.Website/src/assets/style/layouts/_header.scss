@@ -558,3 +558,9 @@
 @media screen and (max-width: 960px) {
   // .header__top
 }
+@media screen and (min-width: 960px) {
+  // .header__top
+  .item-hamburger-btn {
+    display: none;
+  }
+}

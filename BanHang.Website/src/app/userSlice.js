@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import userApi from "../api/userApi";
 
 // Tao async action
@@ -34,26 +34,60 @@ export const userRegister = createAsyncThunk(
   }
 );
 
-export const getUserByToken = createAsyncThunk('user/getUserByToken', async () => {
-  return await userApi.getUserByToken();
-})
+export const getUserByToken = createAsyncThunk(
+  "user/getUserByToken",
+  async () => {
+    return await userApi.getUserByToken();
+  }
+);
 
 // get user by id
-export const getUserById = createAsyncThunk('user/getUserById',
+export const getUserById = createAsyncThunk(
+  "user/getUserById",
   async (userId) => {
-  console.log(userId)
-    return await userApi.getUserById(userId)
-})
+    console.log(userId);
+    return await userApi.getUserById(userId);
+  }
+);
 
-export const updateUserInfo = createAsyncThunk('user/updateUserInfo',
-  ({FullName, Username, Email, PhoneNumber, Age, Birthday, Gender, Address}) => {
-    return userApi.updateUserInfo(FullName, Username, Email, PhoneNumber, Age, Birthday, Gender, Address);
-})
+export const updateUserInfo = createAsyncThunk(
+  "user/updateUserInfo",
+  ({
+    FullName,
+    Username,
+    Email,
+    PhoneNumber,
+    Age,
+    Birthday,
+    Gender,
+    Address,
+  }) => {
+    return userApi.updateUserInfo(
+      FullName,
+      Username,
+      Email,
+      PhoneNumber,
+      Age,
+      Birthday,
+      Gender,
+      Address
+    );
+  }
+);
 
-export const getAllMember = createAsyncThunk('user/getAllMember',
-  ({PageIndex, PageSize, FullName, UserName, PhoneNumber, Active}) => {
-    return userApi.getAllMember(PageIndex, PageSize, FullName, UserName, PhoneNumber, Active);
-})
+export const getAllMember = createAsyncThunk(
+  "user/getAllMember",
+  ({ PageIndex, PageSize, FullName, UserName, PhoneNumber, Active }) => {
+    return userApi.getAllMember(
+      PageIndex,
+      PageSize,
+      FullName,
+      UserName,
+      PhoneNumber,
+      Active
+    );
+  }
+);
 
 // Admin update member activity
 export const adminUpdateActive = createAsyncThunk(
@@ -63,34 +97,51 @@ export const adminUpdateActive = createAsyncThunk(
   }
 );
 
-export const forgotPassword = createAsyncThunk('user/forgotpassword',
-    async ({Email}, { rejectWithValue }) => {
+export const forgotPassword = createAsyncThunk(
+  "user/forgotpassword",
+  async ({ Email }, { rejectWithValue }) => {
     try {
-      return await userApi.forgotPassword(Email)
+      return await userApi.forgotPassword(Email);
     } catch (e) {
-      return rejectWithValue(e.response.data)
+      return rejectWithValue(e.response.data);
     }
-  })
+  }
+);
 
-export const resetPassword = createAsyncThunk('user/reset-password',
-  async (params, {rejectWithValue}) => {
+export const resetPassword = createAsyncThunk(
+  "user/reset-password",
+  async (params, { rejectWithValue }) => {
     try {
-      console.log(params)
-      return await userApi.resetPassword(params)
+      console.log(params);
+      return await userApi.resetPassword(params);
     } catch (e) {
-      return rejectWithValue(e.response.data)
+      return rejectWithValue(e.response.data);
     }
-  })
+  }
+);
 
-export const changePassword = createAsyncThunk('user/change-password',
-  async (params, {rejectWithValue}) => {
+export const changePassword = createAsyncThunk(
+  "user/change-password",
+  async (params, { rejectWithValue }) => {
     try {
-      console.log(params)
-      return await userApi.changePassword(params)
+      console.log(params);
+      return await userApi.changePassword(params);
     } catch (e) {
-      return rejectWithValue(e.response.data)
+      return rejectWithValue(e.response.data);
     }
-  })
+  }
+);
+
+export const getAllUsernames = createAsyncThunk(
+  "user/getAllUsernames",
+  async (params, { rejectWithValue }) => {
+    try {
+      return await userApi.getAllUsernames();
+    } catch (e) {
+      return rejectWithValue(e.response.data);
+    }
+  }
+);
 
 const userSlice = createSlice({
   name: "user",
@@ -144,8 +195,7 @@ const userSlice = createSlice({
         } else if (action.payload.errors.UserName) {
           state.errorMessage = action.payload.errors.UserName;
         }
-      } else
-        state.errorMessage = action.payload.message;
+      } else state.errorMessage = action.payload.message;
     },
     [userRegister.fulfilled]: (state, action) => {
       state.loading = false;
@@ -194,16 +244,15 @@ const userSlice = createSlice({
         if (action.payload.errors.ConfirmNewPassword) {
           state.errorMessage = action.payload.errors.ConfirmNewPassword;
         }
-      } else
-      state.errorMessage = action.payload.message;
+      } else state.errorMessage = action.payload.message;
     },
     // [resetPassword.fulfilled]: (state, action) => {
     //   state.loading = false;
     //   state.isSuccess = true;
-      // luu data vao state tren store
+    // luu data vao state tren store
     // },
 
-  //  Change password
+    //  Change password
     [changePassword.pending]: (state) => {
       state.loading = true;
     },
@@ -214,8 +263,7 @@ const userSlice = createSlice({
         if (action.payload.errors.ConfirmNewPassword) {
           state.errorMessage = action.payload.errors.ConfirmNewPassword;
         }
-      } else
-        state.errorMessage = action.payload.message;
+      } else state.errorMessage = action.payload.message;
     },
     [changePassword.fulfilled]: (state, action) => {
       state.loading = false;
