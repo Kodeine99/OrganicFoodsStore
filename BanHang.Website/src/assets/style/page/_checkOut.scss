@@ -8,11 +8,9 @@
   padding-bottom: 50px;
 
   &__header {
-
   }
 
   &__content {
-
     & h4 {
       font-size: 24px;
       font-weight: 600;
@@ -21,6 +19,14 @@
     & p {
       font-size: 16px;
       font-weight: 500;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .checkOut {
+    &__right-header {
+      margin-top: 20px;
+      margin-bottom: 10px;
     }
   }
 }
