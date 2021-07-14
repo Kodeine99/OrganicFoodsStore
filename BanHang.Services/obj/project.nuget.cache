@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sL4Hl31iD1oAi95CqnQgih+wsgEU06uRo8VVBPjA5FlVZuBf6T5dVPj0o5BxDo5Ovln0tatlcT7P24dVcB686A==",
+  "dgSpecHash": "nByP8um097RPgjKGYIoGkb4V/8kLReg/d/3DjKdYCkKpJit8fpmdkiUwMMpYbXjJYcL7mKm5gtZ/1WnIY6tGTA==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\BanHang.Services\\BanHang.Services.csproj",
+  "projectFilePath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\BanHang.Services\\BanHang.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\fluentvalidation\\10.1.0\\fluentvalidation.10.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\mailkit\\2.12.0\\mailkit.2.12.0.nupkg.sha512",

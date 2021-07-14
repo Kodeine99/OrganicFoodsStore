@@ -75,6 +75,8 @@ namespace BanHang.Services.ViewModel
         public int? Weight { get; set; }
         public bool? IsRate { get; set; } = false;
         public string Search { get; set; }
+        public int? SortBy { get; set; }
+
 
     }
 

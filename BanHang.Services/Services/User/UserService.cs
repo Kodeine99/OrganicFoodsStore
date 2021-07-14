@@ -205,22 +205,11 @@ namespace BanHang.Services.Services
         {
             var userList = await _userManager.GetUsersInRoleAsync("member");
             var userListVMs = userList
-                .Where(o => string.IsNullOrWhiteSpace(filter.FullName) || o.FullName.Contains(filter.FullName))
-                .Where(o => string.IsNullOrWhiteSpace(filter.Username) || o.UserName.Contains(filter.Username))
+                .Where(o => string.IsNullOrWhiteSpace(filter.FullName) || o.FullName.ToLower().Contains(filter.FullName.ToLower()))
+                .Where(o => string.IsNullOrWhiteSpace(filter.Username) || o.UserName.ToLower().Contains(filter.Username.ToLower()))
                 .Where(o => string.IsNullOrWhiteSpace(filter.PhoneNumber) || o.PhoneNumber == filter.PhoneNumber)
                 .Where(o => filter.Active == null || o.Active == filter.Active)
-                .Select(model => new UserViewModel()
-                { 
-                    Id= model.Id,
-                    FullName = model.FullName,
-                    UserName = model.UserName,
-                    PhoneNumber = model.PhoneNumber,
-                    Age=model.Age,
-                    Address = model.Address,
-                    Email = model.Email,
-                    Active = model.Active
-
-                })
+                
                 .ToList();
 
             var pagination = new Pagination<UserViewModel>();
@@ -231,10 +220,36 @@ namespace BanHang.Services.Services
             pagination.Items = userListVMs
                 .Skip(filter.PageSize * (filter.PageIndex - 1))
                 .Take(filter.PageSize)
-    
+                .Select(model => new UserViewModel()
+                {
+                    Id = model.Id,
+                    FullName = model.FullName,
+                    UserName = model.UserName,
+                    PhoneNumber = model.PhoneNumber,
+                    Age = model.Age,
+                    Address = model.Address,
+                    Email = model.Email,
+                    Active = model.Active
+
+                })
+
                 .ToList();
 
             return new ApiSuccess<Pagination<UserViewModel>> { Result = pagination};
+        }
+
+        // Get all users without pagination
+        public async Task<List<ListUsernames>> GetListUsernames()
+        {
+            var usernameList = await _userManager.GetUsersInRoleAsync("member");
+            var usernameListVMs = usernameList
+                .Select(model => new ListUsernames()
+                {
+                    Username = model.UserName
+                })
+                .ToList();
+            return usernameListVMs;
+
         }
         
         // Update thong tin user

@@ -58,6 +58,10 @@ namespace BanHang.Services.ViewModel
 
     }
 
+    public class ListUsernames
+    {
+        public string Username { get; set; }
+    }
     public class updateActiveReq
     {
         public bool isActive { get; set; }

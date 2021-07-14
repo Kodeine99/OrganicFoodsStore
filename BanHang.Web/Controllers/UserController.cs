@@ -121,6 +121,22 @@ namespace BanHang.Web.Controllers
             return Ok(users);
         }
 
+        // Get all member without pagination
+        [HttpGet("getallusernames")]
+        [CustomAuthorization(Policy = "admin")]
+        public async Task<IActionResult> GetAllUsernames()
+        {
+            var userId = _utility.GetUserId(HttpContext);
+            if(userId <= 0)
+            
+                return Unauthorized();
+
+            var usernames = await _userService.GetListUsernames();
+            return Ok(usernames);
+            
+        }
+
+
         [HttpPost("filter")]
         [CustomAuthorization(Policy = "admin,manager")]
         // Get user by filter

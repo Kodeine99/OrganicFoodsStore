@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aOU+AXCeKw9FtlB+5PVuEavHjLpcesICWeQp1cEwlJLr5oMQ5fkpNuf68NURfodz6ZtWm92cSGbmvdnWORFUhA==",
+  "dgSpecHash": "CI8rjXepGQqF/fOpg6JMIDvfegtQsYNbB7/Q59hqW3NOUp+uCChbKct7P8CcnXjsP4f87y2onSXYUjP0XwLuxw==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\BanHang.Web\\BanHang.Web.csproj",
+  "projectFilePath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\BanHang.Web\\BanHang.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\aspnet.security.oauth.validation\\2.0.0\\aspnet.security.oauth.validation.2.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",

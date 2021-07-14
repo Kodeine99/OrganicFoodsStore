@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Notification\\BanHang.Notification.csproj": {}
+    "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Notification\\BanHang.Notification.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Notification\\BanHang.Notification.csproj": {
+    "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Notification\\BanHang.Notification.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Notification\\BanHang.Notification.csproj",
+        "projectUniqueName": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Notification\\BanHang.Notification.csproj",
         "projectName": "BanHang.Notification",
-        "projectPath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Notification\\BanHang.Notification.csproj",
+        "projectPath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Notification\\BanHang.Notification.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Notification\\obj\\",
+        "outputPath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Notification\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

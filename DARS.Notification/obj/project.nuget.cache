@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i05+KIqW8cBQb6qQfQdehm/JW2HL4ezeTrc7IyEwQhc3ltu9Ha+QqXZDh9g+teFdb3NmzV/GkiQBoAJ7+eWTtw==",
+  "dgSpecHash": "t4U+8vKCMnSN2M6sOxloqTbChWHLtbWnpQpT/fN3lXi3G8ZY9465bC8STE64Zx3idn7fM4+ZQx4yAkoLtTb74g==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Notification\\BanHang.Notification.csproj",
+  "projectFilePath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Notification\\BanHang.Notification.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\2.2.0\\microsoft.aspnetcore.connections.abstractions.2.2.0.nupkg.sha512",

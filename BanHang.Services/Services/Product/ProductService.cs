@@ -139,11 +139,11 @@ namespace BanHang.Services.Services
         public ApiResult<Pagination<ProductViewModel>> GetAll(ProductFilter filter)
         {
             var results = work.ProductRepository.Entities
-                .Include(o => o.Supplier) 
+                .Include(o => o.Supplier)
                 .Include(o => o.Category)
                 .Include(o => o.Pictures)
-                .Where(o => filter.Id == null || o.Id==filter.Id)
-                .Where(o => filter.SupplierId == null || o.SupplierId==filter.SupplierId)
+                .Where(o => filter.Id == null || o.Id == filter.Id)
+                .Where(o => filter.SupplierId == null || o.SupplierId == filter.SupplierId)
                 .Where(o => filter.ProductName == null || o.Name.Contains(filter.ProductName))
                 .Where(o => filter.PriceFrom == null || o.UnitPrice >= filter.PriceFrom)
                 .Where(o => filter.PriceTo == null || o.UnitPrice <= filter.PriceTo)
@@ -154,14 +154,26 @@ namespace BanHang.Services.Services
                 .Where(o => filter.AverageRateTo == null || o.AverageRate > filter.AverageRateTo)
                 .Where(o => filter.SupplierName == null || o.Supplier.Name.Contains(filter.SupplierName))
                 .Where(o => filter.CategoryName == null || o.Category.Name.Contains(filter.CategoryName))
-                .Where(o => filter.Weight == null || o.Weight==filter.Weight )
+                .Where(o => filter.Weight == null || o.Weight == filter.Weight)
                 .Where(o => o.Status == 1)
+                .Where(o => filter.Search == null || o.Name.Contains(filter.Search) ||
+                    o.Supplier.Name.Contains(filter.Search) || o.Category.Name.Contains(filter.Search))
                 .ToList();
 
-        if(filter.IsRate == true)
+            if (filter.IsRate == true)
             {
-                results= results.OrderByDescending(o => o.AverageRate).ToList();
+                results = results.OrderByDescending(o => o.AverageRate).ToList();
             }
+            //1: ProductNameIncrease, 2: ProductNameReduction,3: PriceIncrease, 4:PriceReduction
+            switch (filter.SortBy)
+            {
+                case 1: results = results.OrderBy(o => o.Name).ToList(); break;
+                case 2: results = results.OrderByDescending(o => o.Name).ToList(); break;
+                case 3: results = results.OrderBy(o => o.UnitPrice).ToList(); break;
+                case 4: results = results.OrderByDescending(o => o.UnitPrice).ToList(); break;
+                default: break;
+            }
+
             var pagination = new Pagination<ProductViewModel>();
 
             pagination.TotalRecords = results.Count;
@@ -182,7 +194,7 @@ namespace BanHang.Services.Services
                 })
                 .ToList();
 
-            return new ApiSuccess<Pagination<ProductViewModel>> { Result=pagination};
+            return new ApiSuccess<Pagination<ProductViewModel>> { Result = pagination };
         }
 
         public ApiResult<Pagination<ProductViewModel>> GetAllAdmin(ProductFilter filter)

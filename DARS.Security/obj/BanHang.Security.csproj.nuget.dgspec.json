@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Security\\BanHang.Security.csproj": {}
+    "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Security\\BanHang.Security.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Security\\BanHang.Security.csproj": {
+    "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Security\\BanHang.Security.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Security\\BanHang.Security.csproj",
+        "projectUniqueName": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Security\\BanHang.Security.csproj",
         "projectName": "BanHang.Security",
-        "projectPath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Security\\BanHang.Security.csproj",
+        "projectPath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Security\\BanHang.Security.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Security\\obj\\",
+        "outputPath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Security\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",

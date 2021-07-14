@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZWVLEbhBKYORVE2xlYgom7xJ16nA2xGcyrAbuk2azNbV+gG3aP4HNASYosuUNsgnn7iJCFSFGJTMpKM7TTuG7Q==",
+  "dgSpecHash": "ax4o/lo+jWK21bY6sJ/h7OrjjmCb57RZuR4+M9WetG9d7PU5u/ewJr6XZ5WOPk9SSwxPl0y5cN4bocj33bW4Zw==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Oganuceic\\DARS.Security\\BanHang.Security.csproj",
+  "projectFilePath": "D:\\Documents\\62PM1_N4\\DoAnTongHop\\Organuceic\\DARS.Security\\BanHang.Security.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.8.0\\microsoft.identitymodel.jsonwebtokens.6.8.0.nupkg.sha512",

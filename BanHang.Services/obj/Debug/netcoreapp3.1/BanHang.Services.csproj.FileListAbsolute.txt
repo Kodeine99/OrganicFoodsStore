@@ -40,3 +40,17 @@ D:\Documents\62PM1_N4\DoAnTongHop\Oganuceic\BanHang.Services\obj\Debug\netcoreap
 D:\Documents\62PM1_N4\DoAnTongHop\Oganuceic\BanHang.Services\obj\Debug\netcoreapp3.1\BanHang.Services.csproj.CopyComplete
 D:\Documents\62PM1_N4\DoAnTongHop\Oganuceic\BanHang.Services\obj\Debug\netcoreapp3.1\BanHang.Services.dll
 D:\Documents\62PM1_N4\DoAnTongHop\Oganuceic\BanHang.Services\obj\Debug\netcoreapp3.1\BanHang.Services.pdb
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\bin\Debug\netcoreapp3.1\BanHang.Services.deps.json
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\bin\Debug\netcoreapp3.1\BanHang.Services.dll
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\bin\Debug\netcoreapp3.1\BanHang.Services.pdb
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\bin\Debug\netcoreapp3.1\BanHang.Data.dll
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\bin\Debug\netcoreapp3.1\BanHang.Notification.dll
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\bin\Debug\netcoreapp3.1\BanHang.Data.pdb
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\bin\Debug\netcoreapp3.1\BanHang.Notification.pdb
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\obj\Debug\netcoreapp3.1\BanHang.Services.csprojAssemblyReference.cache
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\obj\Debug\netcoreapp3.1\BanHang.Services.AssemblyInfoInputs.cache
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\obj\Debug\netcoreapp3.1\BanHang.Services.AssemblyInfo.cs
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\obj\Debug\netcoreapp3.1\BanHang.Services.csproj.CoreCompileInputs.cache
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\obj\Debug\netcoreapp3.1\BanHang.Services.csproj.CopyComplete
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\obj\Debug\netcoreapp3.1\BanHang.Services.dll
+D:\Documents\62PM1_N4\DoAnTongHop\Organuceic\BanHang.Services\obj\Debug\netcoreapp3.1\BanHang.Services.pdb

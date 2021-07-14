@@ -17,6 +17,7 @@ namespace BanHang.Services.Services
         Task<ApiResult<UserTokenResult>> ForgetPasswordAsync(ForgotPaswordViewModel model, string passwordResetLink);
         Task<ApiResult<bool>> ResetPasswordAsync(ResetPasswordViewModel model);
         Task<ApiResult<Pagination<UserViewModel>>> GetUsersAsync(UserFilter filter);
+        Task<List<ListUsernames>> GetListUsernames();
         bool UpdateUser(UserViewModel model, int id);
         bool UpdateMemberActive(updateActiveReq request, int memberId);
         UserViewModel GetUserById(int id);
