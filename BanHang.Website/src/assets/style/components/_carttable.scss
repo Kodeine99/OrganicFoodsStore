@@ -33,5 +33,11 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .cart__btn {
+    flex-direction: column;
+    & .btn-update {
+      margin-bottom: 10px;
+    }
+  }
 }
