@@ -34,12 +34,12 @@ const ProductDetail = () => {
     const Loaddata = async () => {
       const actionProduct = await dispatch(getProductById(productId));
       const itemProduct = await unwrapResult(actionProduct);
-				
+
       setProduct(itemProduct);
-		   
+
       onLoad();
     };
-  
+
     Loaddata();
   }, [loading]);
 
@@ -53,31 +53,28 @@ const ProductDetail = () => {
     { id: "description", title: "Description" },
     { id: "reviews", title: "Reviews" },
   ];
-								  
+
   return (
     <Container>
       <div className="product-details">
-			 
         <div className="product-details__top">
-          <Row>
-            <Col sm={12}>
-												   
-              {Object.keys(product).length > 0 && (
-                <ProductCardBig
-                  productName={product.name}
-                  rate={product.averageRate}
-                  price={product.unitPrice}
-																				   
-                  imgUrl={product?.pictures[0]?.filePath}
-                  describe={product.description}
-                  netWeight={product.weight}
-                  availableQuantity={product.availableQuantity}
-                  createDate={product.createDate}
-                  expDate={product.expDate}
-                  productId={product.id}
-                />
-              )}
-            </Col>
+          <Row xs={12}>
+            {/* <Col sm={12}> */}
+            {Object.keys(product).length > 0 && (
+              <ProductCardBig
+                productName={product.name}
+                rate={product.averageRate}
+                price={product.unitPrice}
+                imgUrl={product?.pictures[0]?.filePath}
+                describe={product.description}
+                netWeight={product.weight}
+                availableQuantity={product.availableQuantity}
+                createDate={product.createDate}
+                expDate={product.expDate}
+                productId={product.id}
+              />
+            )}
+            {/* </Col> */}
           </Row>
         </div>
         <div className="product-details__bottom m-t-30">
@@ -92,7 +89,6 @@ const ProductDetail = () => {
             </div>
             <div id="reviews">
               <div className="comment__list">
-												   
                 {comments && visible && comments.length > 4
                   ? comments
                       .slice(visible, comments.length)

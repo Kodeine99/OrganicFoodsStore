@@ -47,3 +47,13 @@
   -webkit-appearance: none;
   margin: 0;
 }
+
+@media screen and(max-width:576px) {
+}
+@media screen and(min-width:768px) {
+  .product-details__card {
+    display: flex;
+  }
+}
+@media screen and(max-width:576px) {
+}
