@@ -170,7 +170,7 @@ function UserProfile(props) {
                   </Nav.Item>
                 </Nav>
               </Col>
-              <Col sm={9}>
+              <Col sm={12}>
                 <Tab.Content>
                   <Tab.Pane eventKey="first">
                     <div className="tab__content">

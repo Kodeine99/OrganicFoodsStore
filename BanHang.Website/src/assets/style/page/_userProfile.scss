@@ -8,19 +8,18 @@
   }
 
   & .nav-link {
-
     &:hover {
       color: $color-primary !important;
     }
   }
 
-  & .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  & .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
     color: #fff;
     background-color: $color-primary;
   }
 
   & .tab__content {
-
     &-form {
       border: 1px solid $color-white-3;
       padding: 15px;
@@ -33,7 +32,7 @@
 
     &-btn {
       color: black;
-      transition: .3s linear;
+      transition: 0.3s linear;
 
       &:hover {
         color: $color-white;
@@ -50,9 +49,19 @@
 
   &--ban {
     color: $color-gray-2;
-    
+
     &:hover {
       cursor: no-drop;
     }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .order__tables {
+    display: block;
+    overflow: auto;
+  }
+  .tabs-header {
+    overflow: auto;
   }
 }

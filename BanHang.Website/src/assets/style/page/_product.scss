@@ -24,6 +24,9 @@
         display: none;
       }
     }
+    &__page-pagination {
+      margin-bottom: 20px;
+    }
   }
 }
 @media screen and (max-width: 768px) {
@@ -33,5 +36,11 @@
     }
   }
 }
-@media screen and (max-width: 960px) {
+@media screen and (min-width: 960px) {
+  .product {
+    display: flex !important;
+  }
+  .product__side-bar--mobile {
+    display: none;
+  }
 }

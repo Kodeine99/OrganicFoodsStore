@@ -36,8 +36,8 @@ export default function Product() {
     setPagination(apiProduct.result);
   };
   return (
-    <div className="product container d-flex">
-      <div className="product__left p-r-15">
+    <div className="product container ">
+      <div className="product__left col-lg-3">
         <div className="product__side-bar">
           <ProductSideBar
             setValuesFilter={(valuesFilter) => setValuesFilter(valuesFilter)}
@@ -48,7 +48,7 @@ export default function Product() {
         </div>
       </div>
 
-      <div className="product__right">
+      <div className="product__right col-xs-12 col-sm-12 col-md-12 col-lg-9">
         <div className="product_result d-flex justify-content-end mb-3">
           <h6>
             Showing {pageSize * (pageIndex - 1) + 1}-{pageSize * pageIndex} of{" "}
@@ -56,7 +56,7 @@ export default function Product() {
           </h6>
         </div>
         <div className="product__conntent">
-          <Row lg={3} md={3} xs={2}>
+          <Row lg={3} md={3} sm={2} xs={2}>
             {products.map((product, index) => (
               <Col xs={12} sm={12} md={6} lg={4} className="mb-3">
                 <ProductCard
@@ -79,6 +79,11 @@ export default function Product() {
             setPage={(page) => setPageIndex(page)}
           />
         </div>
+      </div>
+      <div className="product__side-bar--mobile">
+        <ProductSideBar
+          setValuesFilter={(valuesFilter) => setValuesFilter(valuesFilter)}
+        />
       </div>
     </div>
   );

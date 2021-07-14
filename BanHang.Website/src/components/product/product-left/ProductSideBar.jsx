@@ -35,16 +35,15 @@ const ProductSideBar = ({ setValuesFilter, setPageIndex }) => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    const onLoad=async ()=>{
-								
+    const onLoad = async () => {
       const acctionSupplier = await dispatch(getAllSupplier());
       const itemSupplier = await unwrapResult(acctionSupplier).result;
       setSupplier(itemSupplier);
-  
+
       const actionWeight = await dispatch(getWeight());
       const itemWeight = await unwrapResult(actionWeight);
       setWeights(itemWeight.result);
-    }
+    };
     onLoad();
   }, []);
   useEffect(() => {
@@ -54,7 +53,6 @@ const ProductSideBar = ({ setValuesFilter, setPageIndex }) => {
       setCategorys(categorysResult);
     };
     onLoad();
-							   
   }, [categorysResult]);
 
   const formik = useFormik({
@@ -79,7 +77,7 @@ const ProductSideBar = ({ setValuesFilter, setPageIndex }) => {
   });
 
   return (
-    <div className="product-side-bar">
+    <>
       <form onSubmit={formik.handleSubmit}>
         <div className="__category">
           <h6 htmlFor="category" className=" font-weight-bold  text-uppercase">
@@ -160,7 +158,7 @@ const ProductSideBar = ({ setValuesFilter, setPageIndex }) => {
           </button>
         </div>
       </form>
-    </div>
+    </>
   );
 };
 
