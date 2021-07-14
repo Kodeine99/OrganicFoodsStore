@@ -139,7 +139,7 @@ function UserProfile(props) {
         ) : (
           <Tab.Container id="left-tabs-example" defaultActiveKey="first">
             <Row>
-              <Col xs={12} sm={12}>
+              <Col xs={12} sm={12} md={12} lg={3}>
                 <Nav variant="pills" className="flex-column user__profile-nav">
                   <Nav.Item>
                     <Nav.Link
@@ -170,7 +170,7 @@ function UserProfile(props) {
                   </Nav.Item>
                 </Nav>
               </Col>
-              <Col sm={12}>
+              <Col xs={12} sm={12} md={12} lg={9}>
                 <Tab.Content>
                   <Tab.Pane eventKey="first">
                     <div className="tab__content">

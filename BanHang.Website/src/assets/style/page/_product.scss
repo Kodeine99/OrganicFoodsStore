@@ -11,7 +11,27 @@
     border-bottom: 1px solid $color-white-3;
   }
 }
+.product_result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  margin: 5px;
+  margin-bottom: 15px;
+  .sortby {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h6 {
+    margin-bottom: 0;
+  }
+  select {
+    padding: 3px;
+    margin-left: 5px;
+    border: 1px solid $color-gray-2;
+  }
+}
 // Responsive CSS
 @media screen and (max-width: 576px) {
   .product {

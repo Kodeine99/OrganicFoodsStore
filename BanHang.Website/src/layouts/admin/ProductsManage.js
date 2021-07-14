@@ -22,13 +22,14 @@ function ProductsManage(props) {
   const products = useSelector((state) => state.product.productResult2);
   const [image, setImage] = useState();
   const [file, setFile] = useState();
-  const [active, setActive] = useState(0);
+  const [reload, setReload] = useState(0);
   useEffect(() => {
     const onLoad = async (valuesFilter) => {
       await onLoadData(valuesFilter);
     };
     onLoad(valuesFilter);
-  }, [pageIndex, valuesFilter, active]);
+    // eslint-disable-next-line
+  }, [pageIndex, valuesFilter, reload]);
 
   const onLoadData = async (valuesFilter) => {
     // console.log("valuesFilter", valuesFilter);
@@ -48,8 +49,7 @@ function ProductsManage(props) {
     <div className="admin__products">
       <div className="admin__products-header d-flex justify-content-between">
         <h3 className={"m-b-20 font-weight-bold"}>Products management</h3>
-			
-																				
+
         <AddToProductModal />
       </div>
 
@@ -60,58 +60,46 @@ function ProductsManage(props) {
         />
       </div>
       <div className="d-flex justify-content-between align-items-center m-3">
-						 
-								 
-          {pageIndex * pageSize > pagination.totalRecords ? (
-            <h6>
-              Showing {pageSize * (pageIndex - 1) + 1}-{pagination.totalRecords} of{" "}
-              {pagination.totalRecords} results
-																	  
-            </h6>
-          ) : (
-            <h6>
-              Showing {pageSize * (pageIndex - 1) + 1}-{pageSize * pageIndex} of{" "}
-              {pagination.totalRecords} results
-            </h6>
-          )}
-          <CustomPagination
-            pagination={pagination}
-            page={pageIndex}
-            setPage={(page) => setPageIndex(page)}
-          />
+        {pageIndex * pageSize > pagination.totalRecords ? (
+          <h6>
+            Showing {pageSize * (pageIndex - 1) + 1}-{pagination.totalRecords}{" "}
+            of {pagination.totalRecords} results
+          </h6>
+        ) : (
+          <h6>
+            Showing {pageSize * (pageIndex - 1) + 1}-{pageSize * pageIndex} of{" "}
+            {pagination.totalRecords} results
+          </h6>
+        )}
+        <CustomPagination
+          pagination={pagination}
+          page={pageIndex}
+          setPage={(page) => setPageIndex(page)}
+        />
       </div>
       <div className="admin__product-table">
         <Table bordered hover>
           <thead>
             <tr className="list-cart">
               <th className="col-1 text-center  align-middle">STT</th>
-				  
-				   
+
               <th className="col-2 text-center align-middle ">Product Name</th>
               <th className="col-2 text-center  align-middle">Category Name</th>
-							 
-				   
+
               <th className="col-1 text-center align-middle">Supplier Name</th>
-							 
-				   
+
               <th className="col-1 text-center align-middle">Unitil Price</th>
-						   
-				   
+
               <th className="col-1 text-center align-middle">
                 Available Quantity
               </th>
               <th className="col-2 text-center align-middle">Create Date</th>
-						  
-				   
+
               <th className="col-2 text-center align-middle">Exp Date</th>
-						  
-				   
+
               <th className="col-1 text-center align-middle">Active</th>
-					  
-				   
+
               <th className="col-1 text-center align-middle">Update</th>
-					  
-				   
             </tr>
           </thead>
           <tbody>
@@ -122,12 +110,12 @@ function ProductsManage(props) {
                 index={index}
                 pageIndex={pageIndex}
                 pageSize={pageSize}
-                setActive={() => setActive(active+1)}
+                reloadIndex={reload}
+                reload={(reloadIndex) => setReload(reloadIndex)}
               />
             ))}
           </tbody>
         </Table>
-														 
       </div>
     </div>
   );

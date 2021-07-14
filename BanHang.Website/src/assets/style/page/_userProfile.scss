@@ -1,6 +1,23 @@
 .user__profile {
   border-bottom: 1px solid $color-white-3;
   &-nav {
+    & .nav-item {
+      &:focus {
+        color: #fff;
+      }
+      &:visited {
+        color: #fff;
+      }
+      &:active {
+        color: #fff;
+      }
+      &:target {
+        color: #fff;
+      }
+      &:focus-visible {
+        color: #fff;
+      }
+    }
   }
   & .nav-pills .nav-link {
     border-radius: 0px;
@@ -9,7 +26,7 @@
 
   & .nav-link {
     &:hover {
-      color: $color-primary !important;
+      // color: $color-primary !important;
     }
   }
 
@@ -63,5 +80,8 @@
   }
   .tabs-header {
     overflow: auto;
+    &-item {
+      padding-right: 10px;
+    }
   }
 }

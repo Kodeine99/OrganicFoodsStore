@@ -7,7 +7,7 @@ import { unwrapResult } from "@reduxjs/toolkit";
 import { useState } from "react";
 import Select from "react-select";
 
-const ProductSideBar = ({ setValuesFilter, setPageIndex }) => {
+const ProductSideBar = ({ setValuesFilter, setPageIndex, setValuesSearch }) => {
   const [categorys, setCategorys] = useState([]);
   const categorysResult = useSelector((state) => state.category.categoryResult);
   const categorySelect = [];
@@ -45,6 +45,7 @@ const ProductSideBar = ({ setValuesFilter, setPageIndex }) => {
       setWeights(itemWeight.result);
     };
     onLoad();
+    // eslint-disable-next-line
   }, []);
   useEffect(() => {
     const onLoad = async () => {
@@ -53,6 +54,7 @@ const ProductSideBar = ({ setValuesFilter, setPageIndex }) => {
       setCategorys(categorysResult);
     };
     onLoad();
+    // eslint-disable-next-line
   }, [categorysResult]);
 
   const formik = useFormik({
@@ -73,6 +75,7 @@ const ProductSideBar = ({ setValuesFilter, setPageIndex }) => {
       };
       setValuesFilter(value);
       setPageIndex(1);
+      setValuesSearch();
     },
   });
 

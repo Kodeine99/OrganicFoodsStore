@@ -14,7 +14,10 @@ import ActiveIcon from "../../../../assets/img/icon/flatIcon/check_24.png";
 import Button from "react-bootstrap/Button";
 
 const ProductRow = (props) => {
+  console.log(props.activeIndex);
   const dispatch = useDispatch();
+  const [modalShow, setModalShow] = useState(false);
+  const [modalText, setModalText] = useState("");
 
   //modal update product
   const [show, setShow] = useState(false);
@@ -22,20 +25,21 @@ const ProductRow = (props) => {
   const handleShow = () => setShow(true);
 
   //modal active product
-  const [status, setStatus] = useState(props.product.status);
-  const [modalShow, setModalShow] = useState(false);
-  const [modalText, setModalText] = useState("");
-  const onUpdateStatus = () => {
-    setModalShow(false);
-    if (status === 1) {
-      dispatch(updateStatusProduct({ id: props.product.id, status: 0 }));
-      setStatus(0);
-       
+  // const [status, setStatus] = useState(props.product.status);
+
+  const onUpdateStatus = async () => {
+    if (props.product.status === 1) {
+      //  setStatus(0);
+      await dispatch(updateStatusProduct({ id: props.product.id, status: 0 }));
     } else {
-      dispatch(updateStatusProduct({ id: props.product.id, status: 1 }));
-      setStatus(1);
+      //  setStatus(1);
+      await dispatch(updateStatusProduct({ id: props.product.id, status: 1 }));
     }
-    props.setActive();
+    // dispatch(updateStatusProduct({ id: props.product.id, status: status }));
+
+    props.reload(props.reloadIndex + 1);
+    console.log(props.reloadIndex);
+    setModalShow(false);
   };
 
   return (
@@ -118,14 +122,11 @@ const ProductRow = (props) => {
         <Modal.Footer>
           <Button
             variant="primary"
-            onClick={async () => onUpdateStatus()}
+            onClick={() => onUpdateStatus()}
             //   {
             //   setModalShow(false);
             //   // await (status===1) ? setStatus(0)
             //   // : ((status==0) && setStatus(1));
-			  
-																									 
-																									 
 
             //   await status === 1 &&
             //     // dispatch(
