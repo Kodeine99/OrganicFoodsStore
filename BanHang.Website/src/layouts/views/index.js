@@ -11,6 +11,7 @@ import Cart from "./Cart";
 import Checkout from "./Checkout";
 import CheckOutSuccess from "./CheckOutSuccess";
 import Page401 from "../auth/Page401";
+import ContactUs from "./ContactUs";
 
 export default function Views() {
   return (
@@ -21,14 +22,18 @@ export default function Views() {
       <div className="home-body">
         <div>
           <Switch>
-            <ContentRoute path="/home" component={Home}/>
-            <ContentRoute path="/product" component={Product}/>
-            <ContentRoute path="/cart" component={Cart}/>
-            <ContentRoute path="/check-out" component={Checkout}/>
-            <ContentRoute path="/check-out-success" component={CheckOutSuccess}/>
+            <ContentRoute path="/home" component={Home} />
+            <ContentRoute path="/product" component={Product} />
+            <ContentRoute path="/contactUs" component={ContactUs} />
+            <ContentRoute path="/cart" component={Cart} />
+            <ContentRoute path="/check-out" component={Checkout} />
+            <ContentRoute
+              path="/check-out-success"
+              component={CheckOutSuccess}
+            />
 
-            <ContentRoute path="/product-detail/*" component={ProductDetail}/>
-            <ContentRoute path="/userProfile" component={UserProfile}/>
+            <ContentRoute path="/product-detail/*" component={ProductDetail} />
+            <ContentRoute path="/userProfile" component={UserProfile} />
           </Switch>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { FiShoppingCart, FiMenu } from "react-icons/fi";
 import { FaRegUser, FaTimes } from "react-icons/fa";
 import Logo from "../../../assets/img/logo/oganuceic.png";
@@ -67,24 +67,52 @@ function HeaderCenter({ setShow, isShow }) {
                   <ul className="header__nav">
                     {/* Single nav link */}
                     <li className="header__nav-item pos-relative">
-                      <Link to="/Home" className="header__nav-link">
+                      <NavLink
+                        to="/Home"
+                        activeStyle={{
+                          fontWeight: "bold",
+                          color: "#6dae26",
+                        }}
+                        className="header__nav-link"
+                      >
                         Home
-                      </Link>
+                      </NavLink>
                     </li>
                     <li className="header__nav-item pos-relative">
-                      <Link to="/Product" className="header__nav-link">
+                      <NavLink
+                        to="/Product"
+                        activeStyle={{
+                          fontWeight: "bold",
+                          color: "#6dae26",
+                        }}
+                        className="header__nav-link"
+                      >
                         Products
-                      </Link>
+                      </NavLink>
                     </li>
                     <li className="header__nav-item pos-relative">
-                      <Link to="/AboutUs" className="header__nav-link">
-                        About Us
-                      </Link>
+                      <NavLink
+                        to="/AboutUs"
+                        activeStyle={{
+                          fontWeight: "bold",
+                          color: "#6dae26",
+                        }}
+                        className="header__nav-link"
+                      >
+                        AboutUs
+                      </NavLink>
                     </li>
                     <li className="header__nav-item pos-relative">
-                      <Link to="/ContactUs" className="header__nav-link">
+                      <NavLink
+                        to="/ContactUs"
+                        activeStyle={{
+                          fontWeight: "bold",
+                          color: "#6dae26",
+                        }}
+                        className="header__nav-link"
+                      >
                         Contact Us
-                      </Link>
+                      </NavLink>
                     </li>
                   </ul>
                 </nav>
