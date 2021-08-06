@@ -10,8 +10,10 @@ import { useLocation } from "react-router-dom";
 import { getAllCommentByProductId } from "../../app/commentSlice";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { getProductById } from "../../app/productSlice";
+import { useCookies } from "react-cookie";
 
 const ProductDetail = () => {
+  const [cookie, setCookie, removeCookie] = useCookies();
   const location = useLocation();
   const productId = location.pathname.substring(16);
 
@@ -134,14 +136,16 @@ const ProductDetail = () => {
                   )}
                 </div>
               </div>
-              <div className="comment__add">
-                <div className="addcomment_info">
-                  <CommentAdd
-                    load={() => setloading(!loading)}
-                    productId={product.id}
-                  />
+              {cookie["access_token"] && (
+                <div className="comment__add">
+                  <div className="addcomment_info">
+                    <CommentAdd
+                      load={() => setloading(!loading)}
+                      productId={product.id}
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </Tabs>
         </div>

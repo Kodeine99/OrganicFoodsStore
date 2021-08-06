@@ -49,8 +49,7 @@ function ProductsManage(props) {
     <div className="admin__products">
       <div className="admin__products-header d-flex justify-content-between">
         <h3 className={"m-b-20 font-weight-bold"}>Products management</h3>
-
-        <AddToProductModal />
+        <AddToProductModal reload={(reloadIndex) => setReload(reloadIndex)} />
       </div>
 
       <div className="admin__product-search">

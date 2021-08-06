@@ -104,6 +104,7 @@ const ProductRow = (props) => {
         <Modal.Body>
           <ProductUpdateCard
             product={props.product}
+            reload={props.reload}
             handleClose={() => handleClose()}
           />
         </Modal.Body>

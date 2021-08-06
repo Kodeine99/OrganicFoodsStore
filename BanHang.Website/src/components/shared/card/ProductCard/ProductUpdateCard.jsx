@@ -35,9 +35,15 @@ const ProductUpdateCard = (props) => {
     value: { id: props.product.supplierId },
   };
 
-  const createDate=props.product.createDate.substring(0,props.product.createDate.indexOf("T"));
-  const expDate=props.product.expDate.substring(0,props.product.expDate.indexOf("T"))
-  console.log(expDate)
+  const createDate = props.product.createDate.substring(
+    0,
+    props.product.createDate.indexOf("T")
+  );
+  const expDate = props.product.expDate.substring(
+    0,
+    props.product.expDate.indexOf("T")
+  );
+  console.log(expDate);
   // const statusSelect = [
   //   { value: 1, label: "Active" },
   //   { value: 0, label: "Inactive" },
@@ -69,15 +75,15 @@ const ProductUpdateCard = (props) => {
       unitPrice: props.product.unitPrice,
       availableQuantity: props.product.availableQuantity,
       weight: props.product.weight,
-      createdate:createDate,
-      expdate:expDate
+      createdate: createDate,
+      expdate: expDate,
       // updatedate: props.product.updatedate,
       // status:props.product.status
       //   image: null,
     },
-    onSubmit:  (values) => {
-       console.log("values", values);
-						  
+    onSubmit: async (values) => {
+      console.log("values", values);
+
       // console.log("value2", {
       //   Name: values.nameProduct,
       //   CategoryId: parseInt(values.category.value.id),
@@ -88,7 +94,7 @@ const ProductUpdateCard = (props) => {
       //   Weight: values.weight,
       //   // Status:values.status
       // });
-       dispatch(
+      await dispatch(
         updateProduct({
           Id: props.product.id,
           Name: values.nameProduct,
@@ -100,18 +106,18 @@ const ProductUpdateCard = (props) => {
           Weight: values.weight,
           // Status: 0,
           ImagesProduct: values.image,
-          CreateDate:values.createdate,
-          ExpDate:values.expdate
+          CreateDate: values.createdate,
+          ExpDate: values.expdate,
         })
       );
-      values.preventDefault();
+      // values.preventDefault();
+      props.reload(Math.floor(Math.random() * 100));
 
       //  dispatch(getAllProduct());
       props.handleClose();
       // window.location.reload();
     },
   });
-
 
   //img
   const [image, setImage] = useState(props.product.pictures[0].filePath);
@@ -291,21 +297,6 @@ const ProductUpdateCard = (props) => {
           />
         </div>
 
-															
-										  
-				 
-					   
-						 
-							
-										
-									   
-																   
-													  
-			 
-							  
-								  
-			
-				  
         <div className="__btn-submit d-flex justify-content-end mb-4 mt-4 col">
           <button
             type="submit"

@@ -5,8 +5,7 @@ import categoryApi from "../api/categoryApi";
 // Tao async action
 export const getAllCategory = createAsyncThunk('categpory/getall',
   async () => {
-   const response = await categoryApi.getAll({});
-    return response;
+    return await categoryApi.getAll({});
 })
 const categorySlice = createSlice({
   name: 'category',

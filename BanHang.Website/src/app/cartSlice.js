@@ -14,37 +14,32 @@ export const getAllCartByUerId = createAsyncThunk(
 export const addToCart = createAsyncThunk(
   "cart/addtocart",
   async ({ ProductId, Quantity }) => {
-    const response = await cartApi.addToCart(ProductId, Quantity);
     // console.log('response', response);
-    return response;
+    return await cartApi.addToCart(ProductId, Quantity);
   }
 );
 export const deleteACart=createAsyncThunk(
   "cart/delete",
   async({productId})=>{
-    const response=await cartApi.deleteCart(productId);
-    return response;
+    return await cartApi.deleteCart(productId);
   }
 )
 export const deleteAllCart=createAsyncThunk(
   "cart/deleteall",
   async()=>{
-    const response=await cartApi.deleteAllCart();
-    return response;
+    return await cartApi.deleteAllCart();
   }
 )
 export const updateCart=createAsyncThunk(
   "cart/update",
   async({ProductId,Quantity}) =>{
-    const response=await cartApi.updateCart(ProductId,Quantity);
-    return response;
+    return await cartApi.updateCart(ProductId, Quantity);
   }
 )
 export const updateCartPlus=createAsyncThunk(
   "cart/updateCartPlus",
   async({ProductId,Quantity}) =>{
-    const response=await cartApi.updateCartPlus(ProductId,Quantity);
-    return response;
+    return await cartApi.updateCartPlus(ProductId, Quantity);
   }
 )
 

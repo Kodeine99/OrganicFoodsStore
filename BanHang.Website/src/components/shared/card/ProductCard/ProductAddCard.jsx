@@ -9,6 +9,7 @@ import Select from "react-select";
 import Button from "react-bootstrap/Button";
 import * as yup from "yup";
 import { AiOutlineClose } from "react-icons/ai";
+import toast, { Toaster } from "react-hot-toast";
 
 const ProductAddCard = (props) => {
   const [categorys, setCategorys] = useState([]);
@@ -94,29 +95,38 @@ const ProductAddCard = (props) => {
       weight: 1,
       image: null,
       createdate: time,
+      expdate: time,
     },
     validationSchema: validationSchema,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       console.log("values", values);
       // console.log("product",pro)
-      dispatch(
-        createProduct({
-          CategoryId: parseInt(values.category.value.id),
-          SupplierId: parseInt(values.supplier.value.id),
-          Name: values.nameProduct,
-          Description: values.description,
-          UnitPrice: values.unitPrice,
-          AvailableQuantity: values.availableQuantity,
-          Weight: values.weight,
-          ImagesProduct: values.image,
-          CreateDate: values.createdate,
-          ExpDate: values.expdate,
-        })
-      );
+      if (values.image == null) {
+        console.log("thieu img");
+        toast.error("Bạn chưa thêm ảnh!");
+      } else {
+        await dispatch(
+          createProduct({
+            CategoryId: parseInt(values.category.value.id),
+            SupplierId: parseInt(values.supplier.value.id),
+            Name: values.nameProduct,
+            Description: values.description,
+            UnitPrice: values.unitPrice,
+            AvailableQuantity: values.availableQuantity,
+            Weight: values.weight,
+            ImagesProduct: values.image,
+            CreateDate: values.createdate,
+            ExpDate: values.expdate,
+          })
+        );
+        props.handleClose();
+        props.reload(Math.floor(Math.random() * 100));
+      }
     },
   });
   return (
     <div className="product-add-to-card">
+      <Toaster style={{ "z-index": "10000" }} />
       <form onSubmit={formik.handleSubmit}>
         <div className="d-flex">
           <div className=" col-4  ">
@@ -148,10 +158,6 @@ const ProductAddCard = (props) => {
               accept="image/*"
               hideThumbnailContent={false}
               onChange={(e) => onImageChange(e)}
-				 
-	
-		 
-		 
             />
           </div>
           <div className="col-8 pr-0">
@@ -192,11 +198,10 @@ const ProductAddCard = (props) => {
 
               <div className="__category   col">
                 <h6 htmlFor="category">Category</h6>
-	 
+
                 <Select
                   id="category"
                   name="category"
-									 
                   onChange={(categoryOption) =>
                     formik.setFieldValue("category", categoryOption)
                   }
@@ -252,8 +257,6 @@ const ProductAddCard = (props) => {
           </div>
         </div>
 
-										   
-
         <div className="d-flex mt-2">
           <div className="__createproduct col">
             <h6 htmlFor="nameProduct">Create Date</h6>
@@ -286,8 +289,7 @@ const ProductAddCard = (props) => {
         </div>
         <div className="__description col mt-3">
           <h6 htmlFor="description">Description</h6>
-		
-	  
+
           <textarea
             placeholder="Enter description"
             className="border w-100 p-2 rounded"
@@ -298,60 +300,7 @@ const ProductAddCard = (props) => {
             {...formik.getFieldProps("description")}
           />
         </div>
-			   
-		  
-	  
-	  
-	
-	   
-	   
-			
-	   
-			
-			  
-   
-	 
-			   
-			
-		 
-	  
-	
-	   
-	   
-			
-		 
-			
-				
-   
-	 
-			 
-		  
-	  
-	  
-	
-	   
-	   
-			
-	   
-			
-			  
-   
-	 
 
-		  
-			  
-	
-		
-	   
-	  
-	   
-	 
-			  
-				
-	   
-	
-   
-	 
         <div className="__btn-submit col d-flex justify-content-end mb-4 mt-3">
           <button
             type="submit"

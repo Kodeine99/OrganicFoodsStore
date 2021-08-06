@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import ProductAddCard from "../card/ProductCard/ProductAddCard";
 import { IoMdAddCircle } from "react-icons/io";
 
-const AddToProductModal = () => {
+const AddToProductModal = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -15,7 +15,7 @@ const AddToProductModal = () => {
         className="__products--button-add btn "
         onClick={handleShow}
       >
-       <IoMdAddCircle className="__product--icon-to-product"/> 
+        <IoMdAddCircle className="__product--icon-to-product" />
       </button>
 
       <Modal show={show} onHide={handleClose} size="lg">
@@ -23,7 +23,10 @@ const AddToProductModal = () => {
           <Modal.Title>Add News Product</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <ProductAddCard handleClose={()=>handleClose()}/>
+          <ProductAddCard
+            reload={props.reload}
+            handleClose={() => handleClose()}
+          />
         </Modal.Body>
       </Modal>
     </div>
